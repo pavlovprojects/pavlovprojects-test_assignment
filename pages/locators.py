@@ -19,7 +19,7 @@ class AccountCreationPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".info-account")
 
 
-class BasePageLocators():
+class MainPageLocators():
     SIGN_IN_LINK = (By.CSS_SELECTOR, ".login")
 
 

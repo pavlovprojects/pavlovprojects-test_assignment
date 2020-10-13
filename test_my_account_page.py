@@ -3,16 +3,14 @@ from faker import Faker
 from .pages.my_account_page import MyAccountPage
 from .pages.account_creation_page import AccountCreationPage
 
-@pytest.mark.test_assignment
+
+@pytest.mark.test_base_create_account
 class TestCreateNewAccount():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         self.link = "http://automationpractice.com/index.php?controller=authentication&back=my-account/"
         self.my_account_page = MyAccountPage(browser, self.link)
         self.my_account_page.open()
-
-    def test_guest_should_see_create_account_form_elements(self, browser):
-        self.my_account_page.should_be_create_account_form_elements()
 
     def test_account_creation(self, browser):
         f = Faker()

@@ -1,20 +1,12 @@
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .locators import BasePageLocators
 
 
 class BasePage():
     def __init__(self, browser, url):
         self.browser = browser
         self.url = url
-
-    def go_to_sign_in_page(self):
-        link = self.browser.find_element(*BasePageLocators.SIGN_IN_LINK)
-        link.click()
-
-    def should_be_sign_in_link(self):
-        assert self.is_element_present(*BasePageLocators.SIGN_IN_LINK), "Sign in link is not presented"
 
     def open(self):
         self.browser.get(self.url)
