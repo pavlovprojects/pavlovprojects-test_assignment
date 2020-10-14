@@ -6,5 +6,4 @@ class MainPage(BasePage):
         assert self.is_element_present(*MainPageLocators.SIGN_IN_LINK), "Sign in link is not presented"
 
     def go_to_sign_in_page(self):
-        link = self.browser.find_element(*MainPageLocators.SIGN_IN_LINK)
-        link.click()
+        self.browser.find_element(*MainPageLocators.SIGN_IN_LINK).click()

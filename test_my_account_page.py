@@ -11,8 +11,6 @@ class TestCreateNewAccount():
         self.link = "http://automationpractice.com/index.php?controller=authentication&back=my-account/"
         self.my_account_page = MyAccountPage(browser, self.link)
         self.my_account_page.open()
-
-    def test_account_creation(self, browser):
         f = Faker()
         self.email = f.email()
         self.first_name = f.first_name()
@@ -24,6 +22,7 @@ class TestCreateNewAccount():
         self.zip_code = f.postalcode()
         self.phone = f.msisdn()
 
+    def test_account_creation(self, browser):
         self.my_account_page.check_email_valid(self.email)
         self.my_account_page.create_new_account_email()
         self.account_creation_page = AccountCreationPage(browser, browser.current_url)
