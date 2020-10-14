@@ -1,7 +1,7 @@
 # My test assignment
 
-Test 1: pytest -v --tb=line --reruns 3 --reruns-delay 2 -m test_go_to_sign_in_page
-Test 1: pytest -v --tb=line --reruns 3 --reruns-delay 2 -m test_base_create_account
+pytest -v --tb=line --reruns 3 --reruns-delay 2 -m test_go_to_sign_in_page
+pytest -v --tb=line --reruns 3 --reruns-delay 2 -m test_base_create_account
 
 addoption: 
 --browser_name=chrome  (default browser)
